@@ -1,8 +1,8 @@
 ﻿// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию
 //эл-ты каждой строки двумерного массива.
 
-int rows = ReadInt("Enrer the number of rows in the array: ");
-int columns = ReadInt("Enrer the number of columns in the array: ");
+int rows = ReadInt("Enter the number of rows in the array: ");
+int columns = ReadInt("Enter the number of columns in the array: ");
 
 int [,] numbers = new int[rows,columns];
 FillMatrixRandomNumbers(numbers);
