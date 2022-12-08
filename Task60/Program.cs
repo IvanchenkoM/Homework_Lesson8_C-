@@ -8,6 +8,7 @@ int page = ReadInt("Enter the number of page in the array: ");
 int[,,] array3D = new int[rows,columns,page];
 FillArrayNonRecurringRandomNumbers(array3D);
 WriteArray3D(array3D);
+WriteArray3DWithIndex(array3D);
 
 void FillArrayNonRecurringRandomNumbers(int[,,] array)
 {
@@ -53,6 +54,23 @@ void WriteArray3D (int[,,] array)
             for (int k=0; k< array.GetLength(2); k++)
             {
                 Console.Write(array[i,j,k]+ " ");
+            } 
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void WriteArray3DWithIndex (int[,,] array)
+{
+    for (int i=0; i < array.GetLength(0); i++)
+    {
+        for (int j=0; j < array.GetLength(1); j++)
+        {
+            for (int k=0; k< array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i,j,k]} ({i},{j},{k})  ");
             } 
             Console.WriteLine();
         }
