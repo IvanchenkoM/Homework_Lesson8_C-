@@ -6,36 +6,34 @@ int[,] snakeArray = new int[size,size];
 int sizeSnakeArrayN = size;//стороны прямоугольника
 int sizeSnakeArrayM = size;
 
-int topLeftCorner=0;
-int topRightCorner=0;
-int lowerLeftCorner=0;
-int lowerRightCorner=0;
+int iBeginning=0;
+int iFinal=0;
+int jBeginning=0;
+int jFinal=0;
 
 int k=1;
-int i=1;
+int i=0;
 int j=0;
-snakeArray[0,0]=1;
 
 while (k <= size*size)
 {
-    snakeArray[i,j]=k;
-    Console.Write(snakeArray[0,0]);
-    if (i == topLeftCorner && j < sizeSnakeArrayM-lowerLeftCorner-1)
+    snakeArray[i,j] = k;
+    if (i == iBeginning && j < sizeSnakeArrayM-jFinal-1)
         j++;
-    else if (j ==sizeSnakeArrayM-lowerLeftCorner-1 && i < sizeSnakeArrayN-topRightCorner-1)
+    else if (j ==sizeSnakeArrayM-jFinal-1 && i < sizeSnakeArrayN-iFinal-1)
         i++;
-    else if (i == sizeSnakeArrayN-topRightCorner-1 && j > lowerRightCorner)
+    else if (i == sizeSnakeArrayN-iFinal-1 && j > jBeginning)
         j--;
     else
-        i++;
+        i--;
 
-    if (i== topLeftCorner+1 && j == lowerRightCorner && lowerRightCorner != sizeSnakeArrayM-lowerLeftCorner-1)
-        {
-            topLeftCorner++;
-            topRightCorner++;
-            lowerLeftCorner++;
-            lowerRightCorner++;
-        }
+    if ( i==iBeginning+1 && j==jBeginning && jBeginning!=sizeSnakeArrayM-jFinal-1)
+    {
+        iBeginning++;
+        iFinal++;
+        jBeginning++;
+        jFinal++;
+    }
     k++;
 }
 
